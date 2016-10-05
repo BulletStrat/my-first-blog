@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 
 class Post(models.Model):
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -17,3 +19,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+

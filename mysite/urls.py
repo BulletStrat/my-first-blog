@@ -21,4 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
+    url(r'^api/posts/^', include("blog.api.urls", namespace='posts-api')),
+    url(r'', include('blog.api.urls')),
+
 ]
